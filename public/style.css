@@ -109,6 +109,9 @@ body {
   padding: 25px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .project-head {
@@ -240,6 +243,13 @@ body {
   margin-top: 5px;
 }
 
+.hospitalimage {
+  width: 500px;
+}
+
+.requestimage {
+  height: 400px;
+}
 @media (max-width: 768px) {
   .project-info {
     grid-template-columns: 1fr;
