@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Project Showcase</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+          <li class="nav-item"><a href="#sprints" class="nav-link" data-section="sprints">Sprints</a></li>
+          <li class="nav-item"><a href="#team" class="nav-link" data-section="team">Team</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- Home Section -->
+      <section id="home" class="content-section active">
+        <header class="header">
+          <h1 id="project-name">Blood Request</h1>
+          <p id="project-description">An application that connects blood donors with hospitals</p>
+        </header>
+
+        <div class="project-head">
+          <div class="card2">
+            <h1>Project Description</h1>
+            <p>
+              <strong>Blood Request</strong> is a real-time blood donation application designed to connect patients with
+              urgent need for blood transfusion to donors. The app allows hospitals to send requests for blood that will
+              reach the right registered donors using a matching algorithm based on several factors. <br>
+              <br>
+              <ul> <h3>Key Features</h3> 
+                <li><strong>Real-time requests:</strong> Hospitals can connect instantly with donors</li>
+                <li><strong>Compatibility Matching Algorithm:</strong> Requests are sent to the right set of donors using a matching algorithm</li>
+                <li><strong>Push Notifications:</strong> Donors will recieve notifications for urgent requests</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="card">
+            <h2>Hospital side: web application</h2>
+            <p> Hospitals can access the application using a website. Using this website, they can make and track requests, and check other 
+              requests. They can also track donors and donations.
+            </p>
+            <a href="https://github.com/Mohammadasfour0743/BloodDonation" id="project-link" class="external-link" target="_blank">Web App Github Repo</a>
+          </div>
+          <div class="card">
+            <h2>Donor side: mobile application</h2>
+            <p> Donors can access the application using a mobile application. They can check all current requests in their area, and choose to track specific 
+              requests. They also have a profile with their donation history.
+            </p>
+            <a href="https://github.com/Mohammadasfour0743/BloodDonationWeb" id="project-link" class="external-link" target="_blank">Mobile App Github Repo</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sprints Section -->
+      <section id="sprints" class="content-section">
+        <header class="header">
+          <h1>Project Sprints</h1>
+          <p>The project consists of 3 sprints, each made up of 5 working days</p>
+        </header>
+
+        <div class="sprint-container">
+          <div class="sprint-card">
+            <h3>Sprint 1</h3>
+            <p><strong>Status:</strong> In Progress</p>
+            <p><strong>Duration:</strong> 1 week</p>
+            <p><strong>Demo Date:</strong> 4/4/2025</p>
+            <p><strong>Goals:</strong> Project planning, requirements gathering, initial architecture design</p>
+          </div>
+
+          <div class="sprint-card">
+            <h3>Sprint 2</h3>
+            <p><strong>Status:</strong> TBD</p>
+            <p><strong>Duration:</strong> 2 weeks</p>
+            <p><strong>Goals:</strong> Project planning, requirements gathering, initial architecture design</p>
+          </div>
+
+          <div class="sprint-card">
+            <h3>Sprint 3</h3>
+            <p><strong>Status:</strong> TBD</p>
+            <p><strong>Duration:</strong> 2 weeks</p>
+            <p><strong>Goals:</strong> Project planning, requirements gathering, initial architecture design</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section id="team" class="content-section">
+        <header class="header">
+          <h1>Introducing team Sigmoid</h1>
+        </header>
+
+        <div class="team-grid" id="team-grid">
+          <!-- Team members will be dynamically added here -->
+        </div>
+      </section>
+    </div>
+
+    <script>
+      // Function to update team and project information
+      function updateProjectInfo() {
+        // Team Information
+        const teamMembers = [
+          { name: 'Mohammad Asfour', role: 'Product Owner', email: 'email' },
+          { name: 'Shubhangi Goswami', role: 'Scrum Master', email: 'email' },
+          { name: 'Sai Santhoshi Srinithya Darbha', role: 'Developer', email: 'email' },
+          { name: 'Kateryna Domkina', role: 'Developer', email: 'email' },
+          { name: 'Péter Herczku', role: 'Developer', email: 'email' },
+          { name: 'Vignesh Ranga', role: 'Developer', email: 'email' },
+          { name: 'Sreenija Veladri', role: 'Developer', email: 'email' },
+          { name: 'Kundan Krishna Sai Raghav Vengala', role: 'Developer', email: 'email' },
+          { name: 'Minh Viet Vu', role: 'Developer', email: 'email' },
+        ];
+
+
+        // Update team grid on Team page
+        const teamGrid = document.getElementById('team-grid');
+        teamMembers.forEach((member) => {
+          const teamCard = document.createElement('div');
+          teamCard.className = 'team-card';
+
+          const name = document.createElement('h3');
+          name.textContent = member.name;
+
+          const role = document.createElement('p');
+          role.className = 'team-role';
+          role.textContent = member.role || 'Team Member';
+
+          const email = document.createElement('p');
+          email.className = 'team-email';
+          email.textContent = member.email;
+
+          teamCard.appendChild(name);
+          teamCard.appendChild(role);
+          teamCard.appendChild(email);
+          teamGrid.appendChild(teamCard);
+        });
+
+       
+
+     
+     
+      }
+
+      // Navigation functionality
+      function setupNavigation() {
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach((link) => {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Remove active class from all links and sections
+            navLinks.forEach((link) => link.classList.remove('active'));
+            document.querySelectorAll('.content-section').forEach((section) => {
+              section.classList.remove('active');
+            });
+
+            // Add active class to clicked link
+            this.classList.add('active');
+
+            // Show corresponding section
+            const sectionId = this.getAttribute('data-section');
+            document.getElementById(sectionId).classList.add('active');
+          });
+        });
+      }
+
+      // Initialize page
+      window.onload = function () {
+        updateProjectInfo();
+        setupNavigation();
+      };
+    </script>
+  </body>
+</html>
